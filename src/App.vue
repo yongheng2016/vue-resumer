@@ -42,10 +42,12 @@ export default {
     margin-bottom: 16px;
     display: flex;
     justify-content: space-around;
+    width: 100%;
+    align-self: center;
   }
   #Topbar {
     background: gold;
-    box-shadow: 0 3px 3px rgba(0,0,0,.25);
+    box-shadow: 0 1px 3px rgba(0,0,0,.25);
     height: 64px;
   }
   #Editor{
