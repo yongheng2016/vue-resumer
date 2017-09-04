@@ -41,7 +41,8 @@ export default {
     margin-top: 16px;
     margin-bottom: 16px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 8 16px;
     width: 100%;
     align-self: center;
   }
@@ -55,7 +56,8 @@ export default {
     background: #444;
   }
   #Preview{
-    width: 61.66667%;
+    flex-grow: 1;
+    margin-left: 16px;
     background: #777;
   }
 </style>
