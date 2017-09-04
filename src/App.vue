@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <p>hello world</p>
+    <h1>你好</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  data: function(){
+    return {
+      text: 'good'
+    }
+  }
 }
 </script>
 
@@ -17,7 +22,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: red;
   margin-top: 60px;
 }
 </style>
