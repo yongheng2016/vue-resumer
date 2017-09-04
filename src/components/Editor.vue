@@ -12,7 +12,8 @@ export default {
 
 <style>
     #Editor {
-        color: red;
+        background: #ffffff;
+        box-shadow: 0px 3px 3px 0 rgba(0,0,0,.25)
     }
 </style>
 

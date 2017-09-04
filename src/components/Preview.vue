@@ -12,7 +12,8 @@ export default {
 
 <style>
     #Preview {
-        color: blue;
+        background: #fff;
+        box-shadow: 0px 3px 3px 0 rgba(0,0,0,.25)
     }
 </style>
 
