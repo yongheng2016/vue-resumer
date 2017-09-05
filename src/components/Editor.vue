@@ -2,16 +2,19 @@
   <div id="Editor">
       <nav>
           <ol>
-              <li v-for="(item, index) in resume.visibleItems"
-                :class="{active: item === selected}"
-                @click="selected = item"
-              >{{index}}</li>
+              <li v-for="(item, index) in resume.config"
+                @click="selected = item.field"
+                :class="{active: item.field === selected}">
+                <svg class="icon">
+                    <use :xlink:href="`#icon-${item.icon}`"></use>
+                </svg>
+              </li>
           </ol>
       </nav>
       <ol class="panels">
-          <li v-for="item in resume.visibleItems"
-            v-show="item===selected"
-          >{{resume[item]}}</li>
+          <li v-for="item in resume.config"
+            v-show="item.field===selected"
+          >{{resume[item.field]}}</li>
       </ol>
   </div>
 </template>
@@ -23,7 +26,14 @@ export default {
       return {
           selected: 'profile',
           resume: {
-              visibleItems: ['profile', 'work history', 'education', 'projects', 'awards', 'contacts', 'others'],
+              config: [
+                  {field: 'profile', icon: 'id'},
+                  {field: 'work history', icon: 'work'},
+                  {field: 'education', icon: 'book'},
+                  {field: 'projects', icon: 'heart'},
+                  {field: 'awards', icon: 'cup'},
+                  {field: 'contacts', icon: 'phone'},
+              ],
               profile: {
                   name: '',
                   city: '',
@@ -33,8 +43,7 @@ export default {
               'education': [],
               'projects': [],
               'awards': [],
-              contacts: [],
-              others: []
+              contacts: []
           }
       }
   }
@@ -42,35 +51,40 @@ export default {
 </script>
 
 <style lang="scss">
-    #Editor {
-        background: #ffffff;
-        box-shadow: 0px 1px 3px 0 rgba(0,0,0,.25);
-        display: flex;
-        flex-direction: row;
-        overflow: auto;
-        > nav {
-            width: 80px;
-            background: #000;
-            color: #fff;
-            > ol {
-                > li {
-                    height: 48px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin-top: 16px;
-                    margin-bottom: 16px;
-                    &.active {
-                        background: #fff;
-                        color: #000;
-                    }
-                }
-            }
+  #Editor{
+    background:#ffffff;
+    box-shadow:0 1px 3px 0 rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    > nav{
+      width: 80px;
+      background: black;
+      color: white;
+      > ol {
+        > li{
+          height: 48px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 16px;
+          margin-bottom: 16px;
+          &.active{
+            background: white;
+            color: black;
+          }
         }
-        ol {
-            list-style: none;
-        }
+      }
     }
+    svg.icon{
+      width: 24px; 
+      height: 24px;
+    }
+  }
+  ol{
+    list-style: none;
+  }
+
 </style>
 
 

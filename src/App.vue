@@ -11,6 +11,9 @@
 </template>
 
 <script>
+import 'normalize.css/normalize.css'
+import './assets/reset.css'
+
 import Topbar from './components/Topbar'
 import Editor from './components/Editor'
 import Preview from './components/Preview'
@@ -64,5 +67,12 @@ export default {
     flex-grow: 1;
     margin-left: 16px;
     background: #777;
+  }
+  svg.icon {
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+    vertical-align: -0.1em;
+    font-size: 16px;
   }
 </style>
