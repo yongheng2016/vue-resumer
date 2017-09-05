@@ -39,25 +39,24 @@ export default {
     display: flex;
     flex-direction: column;
     background: #EAEBEC;
-    >main{
-      flex-grow: 1;  
+    > .main {
+      flex-grow: 1;
     }
-    >.main{
+    > .main {
       min-width: 1024px;
       max-width: 1440px;
-      margin-top: 16px;
-      margin-bottom: 16px;
+      margin: 16px auto;
       display: flex;
       justify-content: space-between;
       padding: 8 16px;
       width: 100%;
-      align-self: center;
     }
   }
   #Topbar {
     background: gold;
     box-shadow: 0 1px 3px rgba(0,0,0,.25);
     height: 64px;
+    border-radius: 3px;
   }
   #Editor{
     width: 35%;
@@ -67,6 +66,7 @@ export default {
     flex-grow: 1;
     margin-left: 16px;
     background: #777;
+    flex-grow: 1;
   }
   svg.icon {
     height: 1em;
