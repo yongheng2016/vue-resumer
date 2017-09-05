@@ -56,7 +56,6 @@ export default {
     background: gold;
     box-shadow: 0 1px 3px rgba(0,0,0,.25);
     height: 64px;
-    border-radius: 3px;
   }
   #Editor{
     width: 35%;
