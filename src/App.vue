@@ -14,6 +14,8 @@
 import Topbar from './components/Topbar'
 import Editor from './components/Editor'
 import Preview from './components/Preview'
+import icons from './assets/icons'
+
 export default {
   name: 'app',
   data: function(){
@@ -21,7 +23,10 @@ export default {
       text: 'good'
     }
   },
-  components: {Topbar, Editor, Preview}
+  components: {Topbar, Editor, Preview},
+  created(){
+    document.body.insertAdjacentHTML('afterbegin', icons)
+  }
 }
 </script>
 
