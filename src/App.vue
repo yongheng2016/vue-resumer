@@ -1,13 +1,13 @@
 <template>
-  <div class="page">
-    <header>
-      <Topbar/>
-    </header>
-    <div class="main">
-      <Editor/>
-      <Preview/>
-    </div>
-  </div>
+	<div class="page">
+		<header>
+		<Topbar/>
+		</header>
+		<div class="main">
+		<Editor/>
+		<Preview/>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -19,18 +19,16 @@ import Editor from './components/Editor'
 import Preview from './components/Preview'
 import icons from './assets/icons'
 
+import store from './store/index'
+
 export default {
-  name: 'app',
-  data: function(){
-    return {
-      text: 'good'
-    }
-  },
-  components: {Topbar, Editor, Preview},
-  created(){
-    document.body.insertAdjacentHTML('afterbegin', icons)
-  }
-}
+	name: 'app',
+		store,
+		components: {Topbar, Editor, Preview},
+		created(){
+			document.body.insertAdjacentHTML('afterbegin', icons)
+		}
+	}
 </script>
 
 <style lang="scss">
@@ -58,14 +56,13 @@ export default {
     height: 64px;
   }
   #Editor{
-    width: 35%;
+    min-width: 35%;
     background: #444;
   }
   #Preview{
     flex-grow: 1;
     margin-left: 16px;
     background: #777;
-    flex-grow: 1;
   }
   svg.icon {
     height: 1em;
