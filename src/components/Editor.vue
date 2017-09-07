@@ -1,34 +1,35 @@
 <template>
   <div id="Editor">
-	<nav>
-		<ol>
-			<li v-for="(item, index) in resume.config" @click="selected = item.field" :class="{active: item.field === selected}">
-				<svg class="icon">
-					<use :xlink:href="`#icon-${item.icon}`"></use>
-				</svg>
-			</li>
-		</ol>
-	</nav>
-	<ol class="panels">
-		<li v-for="item in resume.config" v-show="item.field===selected">
-			<div v-if="resume[item.field] instanceof Array">
-					<div class="subitem" v-for="subitem in resume[item.field]">
-						<div class="resumeField" v-for="(value, key) in subitem">
-							<label>
-								{{key}}
-								<input type="text" :value="value">
-							</label>
-						</div>
-					</div>
-			</div>
-			<div v-else class="resumeField" v-for="(value, key) in resume[item.field]">
-				<label>
-					{{key}}
-					<input type="text" v-model="resume[item.field][key]">
-				</label>
-			</div>
-		</li>
-	</ol>
+    <nav>
+      <ol>
+        <li v-for="(item, index) in resume.config" @click="selected = item.field" :class="{active: item.field === selected}">
+          <svg class="icon">
+            <use :xlink:href="`#icon-${item.icon}`"></use>
+          </svg>
+        </li>
+      </ol>
+    </nav>
+
+    <ol class="panels">
+      <li v-for="item in resume.config" v-show="item.field===selected">
+        <div v-if="resume[item.field] instanceof Array">
+            <div class="subitem" v-for="(subitem, i) in resume[item.field]">
+              <div class="resumeField" v-for="(value, key) in subitem">
+                <label>
+                  {{key}}
+                  <input type="text" :value="value" @input="changeResumeField(`${item.field}.${i}.${key}`, $event.target.value)">
+                </label>
+              </div>
+            </div>
+        </div>
+        <div v-else class="resumeField" v-for="(value, key) in resume[item.field]">
+          <label>
+            {{key}}
+          <input type="text" :value="value" @input="changeResumeField(`${item.field}.${key}`, $event.target.value)">
+          </label>
+        </div>
+      </li>
+    </ol>
   </div>
 </template>
 
@@ -51,7 +52,13 @@ export default {
 	methods: {
 		add (){
 			this.$store.commit('increment')
-		}
+    },
+    changeResumeField(path, value){
+      this.$store.commit('updateResume', {
+        path,
+        value
+      })
+    }
 	}
 }
 </script>
