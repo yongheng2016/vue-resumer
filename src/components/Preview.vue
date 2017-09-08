@@ -86,7 +86,7 @@ export default {
       list-style: none;
     }
     #Preview {
-			background: #fff;
+			background: rgba(53, 86, 140, 0.11);
 			box-shadow: 0px 1px 3px 0 rgba(0,0,0,.25);
       padding: 24px;
       overflow: auto;
@@ -97,12 +97,13 @@ export default {
     }
     section h2 {
       display: inline-block;
-      background: rgb(221, 221, 221);
+      background: rgb(245, 232, 29);
       padding: 5px;
-      font-weight: normal;      
+      font-weight: normal; 
+      border-radius: 5px;     
     }
     section h3 {
-      border-bottom: 1px solid rgba(0,0,0,.25);
+      border-bottom: 1px solid #eee;
       padding: 8px;
     }
     section[data-name=profile] h3 {

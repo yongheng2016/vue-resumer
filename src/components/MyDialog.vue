@@ -3,7 +3,7 @@
       <div class="dialog">
           <header>
               {{title}}
-              <span class="close" @click="close"></span>
+              <span class="close" @click="close">x</span>
           </header>
           <main>
               <slot></slot>

@@ -1,13 +1,19 @@
 <template>
   <div id="Topbar">
 		<div class="wrapper">
-			<span class="logo">Resumer</span>
+			<span class="logo">在线简历</span>
 			<div class="actions">
-				<button class="button primary" @click.prevent="signUpDialogVisible = true">注册</button>
-				<MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
-					<SignUpForm @success="login($event)"/>
-				</MyDialog>
-				<button href="#" class="button primary"登陆>登陆</button>
+				<div class="userActions" v-if="logined">
+					<span>你好，{{user.username}}</span>
+					<button class="button">登出</button>
+				</div>
+				<div class="userAction" v-else>
+					<button class="button primary" @click.prevent="signUpDialogVisible = true">注册</button>
+					<MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
+						<SignUpForm @success="login($event)"/>
+					</MyDialog>
+					<button href="#" class="button primary"登陆>登陆</button>
+				</div>
 				<button class="primary">保存</button>
 				<button class="primary">预览</button>
 			</div>
@@ -29,6 +35,9 @@ export default {
   computed: {
 	  user(){
 		  return this.$store.state.user
+	  },
+	  logined(){
+		  return this.user.id
 	  }
   },
   components: {
@@ -83,7 +92,11 @@ export default {
 			color: #fff;
 		}
 	}
-    
+	textarea {
+		font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+	}
 </style>
 
 
