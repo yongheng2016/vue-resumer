@@ -3,7 +3,7 @@
 		<div class="wrapper">
 			<span class="logo">在线简历</span>
 			<div class="actions">
-				<div class="userActions" v-if="logined">
+				<div class="userAction" v-if="logined">
 					<span>你好，{{user.username}}</span>
 					<button class="button">登出</button>
 				</div>
