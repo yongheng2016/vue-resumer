@@ -5,7 +5,7 @@
 			<div class="actions">
 				<button class="button primary" @click.prevent="signUpDialogVisible = true">注册</button>
 				<MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
-					我就是slot内容
+					<SignUpForm @success="login($event)"/>
 				</MyDialog>
 				<button href="#" class="button primary"登陆>登陆</button>
 				<button class="primary">保存</button>
@@ -17,6 +17,7 @@
 
 <script>
 import MyDialog from './MyDialog'
+import SignUpForm from './SignUpForm'
 
 export default {
   name: 'Topbar',
@@ -25,8 +26,20 @@ export default {
 		  signUpDialogVisible: false
 	  }
   },
+  computed: {
+	  user(){
+		  return this.$store.state.user
+	  }
+  },
   components: {
-	  MyDialog
+	  MyDialog,
+	  SignUpForm
+  },
+  methods: {
+		login(user){
+			this.signUpDialogVisible = false
+			this.$store.commit('setUser', user)
+		}
   }
 }
 </script>
