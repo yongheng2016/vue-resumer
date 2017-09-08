@@ -69,6 +69,9 @@ export default {
 			justify-content: space-between;
 			align-items: center;
 			padding: 0 16px;
+			.userAction {
+			display: inline;
+	}
 		}
 		.logo {
 			font-size: 24px;
@@ -92,11 +95,7 @@ export default {
 			color: #fff;
 		}
 	}
-	textarea {
-		font-family: sans-serif;
-    font-size: 100%;
-    line-height: 1.15;
-	}
+
 </style>
 
 

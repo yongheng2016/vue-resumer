@@ -17,7 +17,6 @@
               <div class="resumeField" v-for="(value, key) in subitem">
                 <label>
                   {{key}}
-                  <textarea :value="value" @input="changeResumeField(`${item.field}.${i}.${key}`, $event.target.value)"></textarea>
                   <input type="text" :value="value" @input="changeResumeField(`${item.field}.${i}.${key}`, $event.target.value)">
                 </label>
               </div>
@@ -116,15 +115,6 @@ export default {
             height: 40px;
             padding: 0 8px;
         }
-    }
-    textarea {
-      width: 100%;
-      margin: 16px 0;
-      border: 1px solid #ddd;
-      box-shadow: inset 0 1px 5px 0 rgba(0,0,0,.25);
-      width: 100%;
-      height: 40px;
-      padding: 0 8px;
     }
 </style>
 
