@@ -1,11 +1,11 @@
 <template>
 	<div class="page">
 		<header>
-		<Topbar/>
+		  <Topbar/>
 		</header>
 		<div class="main">
-		<Editor/>
-		<Preview/>
+      <Editor/>
+      <Preview/>
 		</div>
 	</div>
 </template>
@@ -26,7 +26,12 @@ export default {
 		store,
 		components: {Topbar, Editor, Preview},
 		created(){
-			document.body.insertAdjacentHTML('afterbegin', icons)
+      document.body.insertAdjacentHTML('afterbegin', icons)
+      let state = localStorage.getItem('state')
+      if (state){
+        state = JSON.parse(state)
+      }
+      this.$store.commit('initState', state)
 		}
 	}
 </script>
