@@ -4,11 +4,21 @@
       <h1>
         {{resume.profile.name}}
       </h1>
-      <h2>{{resume.profile.title}}</h2>
+      <h3>{{resume.profile.title}}</h3>
       <p>
         <small>{{resume.profile.city}}</small>
         <small>{{resume.profile.birthday}}</small>
       </p>
+    </section>
+
+        <section data-name="projects" v-show="resume.education">
+      <h2>项目经历</h2>
+      <ol>
+        <li v-for="item in resume.projects">
+          <h3>{{item.name}}</h3>
+          <p v-show="item.content"> {{item.content}} </p>
+        </li>
+      </ol>
     </section>
 
     <section data-name="workHistory" v-show="resume.workHistory">
@@ -28,16 +38,6 @@
           <h3>{{item.school}}
             <span v-show="item.content"> - {{item.content}} </span>
           </h3>
-        </li>
-      </ol>
-    </section>
-
-    <section data-name="projects" v-show="resume.education">
-      <h2>项目经历</h2>
-      <ol>
-        <li v-for="item in resume.projects">
-          <h3>{{item.name}}</h3>
-          <p v-show="item.content"> {{item.content}} </p>
         </li>
       </ol>
     </section>
@@ -88,10 +88,26 @@ export default {
     #Preview {
 			background: #fff;
 			box-shadow: 0px 1px 3px 0 rgba(0,0,0,.25);
-      padding: 16px;
+      padding: 24px;
+      overflow: auto;
     }
     section + section {
       white-space: pre-wrap;
+      margin-top: 16px;
+    }
+    section h2 {
+      display: inline-block;
+      background: rgb(221, 221, 221);
+      padding: 5px;
+      font-weight: normal;      
+    }
+    section h3 {
+      border-bottom: 1px solid rgba(0,0,0,.25);
+      padding: 8px;
+    }
+    section[data-name=profile] h3 {
+      border: 0;
+      padding: 0;
     }
 </style>
 
