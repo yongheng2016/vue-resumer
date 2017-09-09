@@ -3,7 +3,7 @@
     <nav>
       <ol>
         <li v-for="(item, index) in resume.config" @click="selected = item.field" :class="{active: item.field === selected}">
-          <svg class="icon">
+          <svg class="icon" viewBox="0 0 200 200" preserveAspectRatio="none">
             <use :xlink:href="`#icon-${item.icon}`"></use>
           </svg>
         </li>
@@ -86,6 +86,10 @@ export default {
             background: white;
             color: black;
           }
+          svg {
+            width: 24px;
+            height: 24px;
+          }
         }
       }
     }
@@ -95,10 +99,7 @@ export default {
             padding: 24px;
         }
     }
-    svg.icon{
-      width: 50%; 
-      height: 50%;
-    }
+
   }
   ol{
     list-style: none;
