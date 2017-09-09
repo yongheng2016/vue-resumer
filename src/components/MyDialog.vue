@@ -41,7 +41,10 @@ export default {
     background: white;
     min-height: 14em;
     min-width: 20em;
+    border-radius: 5px;
     > header{
+      border-radius: 5px;
+      border-radius: 5px 5px 0 0/5px 5px 0 0 ;
       padding: 12px;
       display: flex;
       color: #fff;

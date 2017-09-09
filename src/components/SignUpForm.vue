@@ -55,7 +55,6 @@ export default {
         }
     }
     .actions {
-        margin-top: 10px;
         text-align: right;
     }
 </style>
