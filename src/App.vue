@@ -44,7 +44,7 @@ export default {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background: rgba(53,86,140,.11);
+    background: #fff;
     > .main {
       flex-grow: 1;
     }
@@ -60,7 +60,7 @@ export default {
   }
   #Topbar {
     background: gold;
-    box-shadow: 0 1px 3px rgba(0,0,0,.25);
+    box-shadow: 0 1px 5px rgba(0,0,0,.25);
     height: 64px;
   }
   #Editor{
@@ -81,14 +81,14 @@ export default {
 
     ::-webkit-scrollbar
       {
-        width: 4px;  /* for vertical scrollbars */
-        height: 12px; /* for horizontal scrollbars */
+        width: 2px;  /* for vertical scrollbars */
+        height: 8px; /* for horizontal scrollbars */
         margin-right: 10px;
       }
     ::-webkit-scrollbar-track
       {
         background: #fff;
-        box-shadow: inset 1px 3px 3px 0 rgba(0,0,0,.5)
+        box-shadow: inset 1px 0 3px 0 rgba(0,0,0,.5)
       }
 
     ::-webkit-scrollbar-thumb

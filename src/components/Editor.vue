@@ -66,7 +66,7 @@ export default {
 <style scoped lang="scss">
   #Editor{
     background:#ffffff;
-    box-shadow:0 1px 3px 0 rgba(0,0,0,0.25);
+    box-shadow:1px 1px 3px 0 rgba(0,0,0,0.25);
     display: flex;
     flex-direction: row;
     overflow: auto;
@@ -96,8 +96,8 @@ export default {
         }
     }
     svg.icon{
-      width: 24px; 
-      height: 24px;
+      width: 50%; 
+      height: 50%;
     }
   }
   ol{

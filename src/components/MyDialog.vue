@@ -3,7 +3,7 @@
       <div class="dialog">
           <header>
               {{title}}
-              <span class="close" @click="close">x</span>
+              <span class="close" @click="close">&times;</span>
           </header>
           <main>
               <slot></slot>
@@ -27,7 +27,7 @@ export default {
 <style scoped lang="scss">
   .dialogWrapper{
     position: fixed;
-    background: hsla(0, 0%,0%,0.25);
+    background: rgba(0, 0, 0, 0.7);
     top: 0;
     left: 0;
     bottom: 0;
@@ -40,11 +40,16 @@ export default {
   .dialog{
     background: white;
     min-height: 14em;
-    min-width: 24em;
+    min-width: 20em;
     > header{
-      padding: 16px;
+      padding: 12px;
       display: flex;
+      color: #fff;
       justify-content: space-between;
+      background: rgb(2, 175, 95);
+      .close {
+        cursor: default;
+      }
     }
     > main{
       padding: 16px;

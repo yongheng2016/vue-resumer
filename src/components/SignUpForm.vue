@@ -2,12 +2,10 @@
   <div>
     <form @submit.prevent="signUp">
       <div class="row">
-        <label>用户名</label> 
-        <input type="text" v-model="formData.username">
+        <input type="text" v-model="formData.username" placeholder="用户名">
       </div>
       <div class="row">
-        <label >密码</label>
-        <input type="password" v-model="formData.password">
+        <input type="password" v-model="formData.password" placeholder="密码">
       </div>
       <div class="actions">
         <input type="submit" value="提交">
@@ -48,9 +46,17 @@ export default {
   }
 }
 </script>
-<style>
-  .row {
-    text-align: left;
-  }
+<style lang="scss" scoped>
+    .row {
+        >input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 30px;
+        }
+    }
+    .actions {
+        margin-top: 10px;
+        text-align: right;
+    }
 </style>
 
