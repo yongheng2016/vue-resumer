@@ -4,32 +4,41 @@
 			<span class="logo">在线简历</span>
 			<div class="actions">
 				<div class="userAction" v-if="logined">
-					<span>你好，{{user.username}}</span>
-					<button class="button">登出</button>
+					<span class="welcome">你好，{{user.username}}</span>
+					<button class="button" @click="signOut">登出</button>
 				</div>
 				<div class="userAction" v-else>
 					<button class="button primary" @click.prevent="signUpDialogVisible = true">注册</button>
 					<MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
-						<SignUpForm @success="login($event)"/>
+						<SignUpForm @success="signIn($event)"/>
 					</MyDialog>
-					<button href="#" class="button primary"登陆>登陆</button>
+					<button href="#" class="button primary" @click.prevent="signInDialogVisible = true">登陆</button>
+					<MyDialog title="登陆" :visible="signInDialogVisible" @close="signInDialogVisible = false">
+						<SignInForm @success="signIn($event)"/>
+					</MyDialog>
+
 				</div>
 				<button class="primary">保存</button>
 				<button class="primary">预览</button>
 			</div>
 		</div>
+
+
   </div>
 </template>
 
 <script>
 import MyDialog from './MyDialog'
 import SignUpForm from './SignUpForm'
+import SignInForm from './SignInForm'
+import AV from '../lib/leancloud'
 
 export default {
   name: 'Topbar',
   data(){
 	  return {
-		  signUpDialogVisible: false
+		  signUpDialogVisible: false,
+		  signInDialogVisible: false
 	  }
   },
   computed: {
@@ -42,11 +51,17 @@ export default {
   },
   components: {
 	  MyDialog,
-	  SignUpForm
+	  SignUpForm,
+	  SignInForm
   },
   methods: {
-		login(user){
+	  	signOut(){
+			  AV.User.logOut()
+			  this.$store.commit('removeUser')
+		  },
+		signIn(user){
 			this.signUpDialogVisible = false
+			this.signInDialogVisible = false
 			this.$store.commit('setUser', user)
 		}
   }

@@ -86,7 +86,7 @@ export default {
       list-style: none;
     }
     #Preview {
-			background: rgba(53, 86, 140, 0.11);
+			background: rgba(76, 149, 80, 0.35);
 			box-shadow: 0px 1px 3px 0 rgba(0,0,0,.25);
       padding: 24px;
       overflow: auto;

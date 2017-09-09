@@ -20,6 +20,8 @@ import Preview from './components/Preview'
 import icons from './assets/icons'
 
 import store from './store/index'
+import AV from './lib/leancloud'
+import getAVUser from './lib/getAVUser'
 
 export default {
 	name: 'app',
@@ -32,6 +34,7 @@ export default {
         state = JSON.parse(state)
       }
       this.$store.commit('initState', state)
+      this.$store.commit('setUser', getAVUser())
 		}
 	}
 </script>
@@ -41,7 +44,7 @@ export default {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #EAEBEC;
+    background: rgba(53,86,140,.11);
     > .main {
       flex-grow: 1;
     }
@@ -67,7 +70,6 @@ export default {
   #Preview{
     flex-grow: 1;
     margin-left: 16px;
-    background: #777;
   }
   svg.icon {
     height: 1em;
