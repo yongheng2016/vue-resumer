@@ -69,6 +69,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+	body {
+		background: #000;
+	}
 	a {
 		text-decoration: none;
 	}

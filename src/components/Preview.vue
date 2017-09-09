@@ -86,14 +86,15 @@ export default {
       list-style: none;
     }
     #Preview {
-			background: rgba(193, 201, 193, 0.25);
+      background: ;
+			background: rgba(193, 201, 193, 0.25) url(http://wx2.sinaimg.cn/mw690/b9d0abb5ly1fjdojn37pjj2043043glf.jpg);
       padding: 24px;
       overflow: auto;
   box-shadow:
     0 -1px 1px rgba(0,0,0,0.15),
-    0 -10px 0 -5px #eee,
+    0 -10px 0 -5px rgb(235, 235, 235),
     0 -10px 1px -4px rgba(0,0,0,0.15),
-    0 -20px 0 -10px #eee,
+    0 -20px 0 -10px rgb(240, 240, 240),
     0 -20px 1px -9px rgba(0,0,0,0.15),
     0 3px 5px rgba(0,0,0,.25)
     }
