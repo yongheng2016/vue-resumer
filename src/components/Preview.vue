@@ -86,10 +86,16 @@ export default {
       list-style: none;
     }
     #Preview {
-			background: rgba(76, 149, 80, 0.35);
-			box-shadow: 0px 1px 3px 0 rgba(0,0,0,.25);
+			background: rgba(193, 201, 193, 0.35);
       padding: 24px;
       overflow: auto;
+  box-shadow:
+    0 -1px 1px rgba(0,0,0,0.15),
+    0 -10px 0 -5px #eee,
+    0 -10px 1px -4px rgba(0,0,0,0.15),
+    0 -20px 0 -10px #eee,
+    0 -20px 1px -9px rgba(0,0,0,0.15),
+    0 1px 3px rgba(0,0,0,.25)
     }
     section + section {
       white-space: pre-wrap;

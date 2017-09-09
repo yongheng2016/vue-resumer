@@ -51,7 +51,7 @@ export default {
     > .main {
       min-width: 1024px;
       max-width: 1440px;
-      margin: 16px auto;
+      margin: 24px auto;
       display: flex;
       justify-content: space-between;
       padding: 8 16px;
@@ -78,4 +78,23 @@ export default {
     vertical-align: -0.1em;
     font-size: 16px;
   }
+
+    ::-webkit-scrollbar
+      {
+        width: 4px;  /* for vertical scrollbars */
+        height: 12px; /* for horizontal scrollbars */
+        margin-right: 10px;
+      }
+    ::-webkit-scrollbar-track
+      {
+        background: #fff;
+        box-shadow: inset 1px 3px 3px 0 rgba(0,0,0,.5)
+      }
+
+    ::-webkit-scrollbar-thumb
+      {
+        background: rgba(32, 57, 80, .8);
+        border-radius: 2px;
+      }
+
 </style>

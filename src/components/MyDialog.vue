@@ -39,8 +39,8 @@ export default {
   }
   .dialog{
     background: white;
-    min-height: 4em;
-    min-width: 10em;
+    min-height: 14em;
+    min-width: 24em;
     > header{
       padding: 16px;
       display: flex;
