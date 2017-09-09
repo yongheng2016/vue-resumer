@@ -8,7 +8,7 @@
 					<button class="button" @click="signOut">登出</button>
 				</div>
 				<div class="userAction" v-else>
-					<button class="button primary" @click.prevent="signUpDialogVisible = true">注册</button>
+					<button class="button" @click.prevent="signUpDialogVisible = true">注册</button>
 					<MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
 						<SignUpForm @success="signIn($event)"/>
 					</MyDialog>
@@ -18,7 +18,7 @@
 					</MyDialog>
 
 				</div>
-				<button class="primary">保存</button>
+				<button>保存</button>
 				<button class="primary">预览</button>
 			</div>
 		</div>
