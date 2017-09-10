@@ -18,8 +18,8 @@
 					</MyDialog>
 
 				</div>
-				<button>保存</button>
-				<button class="primary">预览</button>
+				<button class="primary" @click="quitAloneView">退出</button>
+				<button class="primary" @click="aloneView">预览</button>
 			</div>
 		</div>
 
@@ -63,6 +63,12 @@ export default {
 			this.signUpDialogVisible = false
 			this.signInDialogVisible = false
 			this.$store.commit('setUser', user)
+		},
+		aloneView(){
+			this.$emit('aloneView')
+		},
+		quitAloneView(){
+			this.$emit('quitAloneView')
 		}
   }
 }

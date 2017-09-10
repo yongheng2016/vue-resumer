@@ -117,6 +117,9 @@ export default {
             padding: 0 8px;
         }
     }
+    textarea {
+      height: 100px;
+    }
 </style>
 
 

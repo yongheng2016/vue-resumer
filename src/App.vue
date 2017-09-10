@@ -1,11 +1,11 @@
 <template>
 	<div class="page">
 		<header>
-		  <Topbar/>
+		  <Topbar v-on:aloneView="aloneView" v-on:quitAloneView="quitAloneView" />
 		</header>
 		<div class="main">
-      <Editor/>
-      <Preview/>
+      <Editor v-show="aloneViewMode"/>
+      <Preview v-bind:class="{aloneViewMode: !aloneViewMode }"/>
 		</div>
 	</div>
 </template>
@@ -25,7 +25,12 @@ import getAVUser from './lib/getAVUser'
 
 export default {
 	name: 'app',
-		store,
+    store,
+    data(){
+      return {
+        aloneViewMode: true
+      }
+    },
 		components: {Topbar, Editor, Preview},
 		created(){
       document.body.insertAdjacentHTML('afterbegin', icons)
@@ -35,11 +40,22 @@ export default {
       }
       this.$store.commit('initState', state)
       this.$store.commit('setUser', getAVUser())
-		}
+    },
+    methods: {
+      aloneView(){
+        this.aloneViewMode = false
+      },
+      quitAloneView(){
+        this.aloneViewMode = true
+      }
+    }
 	}
 </script>
 
 <style lang="scss">
+  body {
+    background: rgb(2, 175, 95);
+  }
   .page{
     height: 100vh;
     display: flex;
@@ -58,6 +74,9 @@ export default {
       width: 100%;
     }
   }
+  .aloneViewMode {
+    background:red;
+  }
   #Topbar {
     background: gold;
     box-shadow: 0 1px 5px rgba(0,0,0,.25);
@@ -70,6 +89,12 @@ export default {
   #Preview{
     flex-grow: 1;
     margin-left: 16px;
+  }
+  #Preview.aloneViewMode {
+    max-width: 900px;
+    margin: 0 auto;
+    height: 1%;
+ 
   }
   svg.icon {
     height: 1em;

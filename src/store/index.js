@@ -25,7 +25,7 @@ export default new Vuex.Store({
             profile: {
                 name: '姓名',
                 city: '城市',
-                title: "标题"
+                title: "职业"
             },
             'work history': [
                 { company: 'A公司', content: '我的第二份工作是' },
@@ -44,8 +44,8 @@ export default new Vuex.Store({
                 { name: '地址2', content: '文字' },
             ],
             contacts: [
-                { contact: 'phone', content: '13812345678' },
-                { contact: 'qq', content: '12345678' },
+                { contact: '手机：', content: '13812345678' },
+                { contact: 'QQ：', content: '12345678' },
             ],
         }
     },
