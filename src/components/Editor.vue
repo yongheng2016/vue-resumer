@@ -111,7 +111,7 @@ export default {
         input[type=text] {
             margin: 16px 0;
             border: 1px solid #ddd;
-            box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.25);
+            box-shadow: inset 0 5px 35px 0 rgba(31, 75, 25, 0.2), 1px 3px 8px rgba(176, 175, 175, 0.35);
             width: 100%;
             height: 40px;
             padding: 0 8px;

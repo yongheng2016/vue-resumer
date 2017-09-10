@@ -44,7 +44,7 @@ export default {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #fff;
+    background: rgb(2, 175, 95);
     > .main {
       flex-grow: 1;
     }
@@ -88,12 +88,12 @@ export default {
     ::-webkit-scrollbar-track
       {
         background: #fff;
-        box-shadow: inset 1px 0 3px 0 rgba(0,0,0,.5)
+        box-shadow: inset 1px 0 1px 0 rgba(0,0,0,.3)
       }
 
     ::-webkit-scrollbar-thumb
       {
-        background: rgba(32, 57, 80, .8);
+        background: rgba(32, 57, 80, .6);
         border-radius: 2px;
       }
 
