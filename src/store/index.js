@@ -23,9 +23,9 @@ export default new Vuex.Store({
                 { field: 'contacts', icon: 'phone' },
             ],
             profile: {
-                name: '姓名',
-                city: '城市',
-                title: "职业"
+                name: 'name',
+                city: 'city',
+                title: "title"
             },
             'work history': [
                 { company: 'A公司', content: '我的第二份工作是' },
@@ -36,12 +36,18 @@ export default new Vuex.Store({
                 { school: '教育2', content: '文字' },
             ],
             projects: [
-                { name: '项目1', content: '文字' },
-                { name: '项目2', content: '文字' },
+                { name: '在线便利贴', content: `前端：
+    1. javascript组件封装
+    2. 事件发布订阅模式
+    3. webpack, npm script
+后端：
+    1. nodejs
+    2. express, 路由跳转, MVC, sequelize` },
+                { name: '在线简历编辑', content: `vue.js | leancloud` },
             ],
             awards: [
-                { name: '地址1', content: '文字' },
-                { name: '地址2', content: '文字' },
+                { name: 'xxx小学三好学生', content: '由于拾金不昧，上缴国库，荣获xxx小学特等荣誉三好学生' },
+                { name: 'xxx中学奥数特等奖', content: '参见全国奥数比赛，荣获国家头脑风暴特等奖' },
             ],
             contacts: [
                 { contact: '手机：', content: '13812345678' },

@@ -74,9 +74,6 @@ export default {
       width: 100%;
     }
   }
-  .aloneViewMode {
-    background:red;
-  }
   #Topbar {
     background: gold;
     box-shadow: 0 1px 5px rgba(0,0,0,.25);
@@ -93,6 +90,7 @@ export default {
   #Preview.aloneViewMode {
     max-width: 900px;
     margin: 0 auto;
+    overflow: initial;
     height: 1%;
  
   }

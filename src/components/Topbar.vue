@@ -18,8 +18,8 @@
 					</MyDialog>
 
 				</div>
-				<button class="primary" @click="quitAloneView">退出</button>
 				<button class="primary" @click="aloneView">预览</button>
+				<button class="primary" @click="quitAloneView">退出</button>
 			</div>
 		</div>
 
@@ -35,6 +35,7 @@ import AV from '../lib/leancloud'
 
 export default {
   name: 'Topbar',
+  props:['aloneViewMode'],
   data(){
 	  return {
 		  signUpDialogVisible: false,
