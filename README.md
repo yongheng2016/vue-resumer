@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+[https://yongheng2016.github.io/vue-resumer/dist/index.html](https://yongheng2016.github.io/vue-resumer/dist/index.html)
+
 ## Build Setup
 
 ``` bash
