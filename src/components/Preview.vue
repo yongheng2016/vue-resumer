@@ -21,12 +21,12 @@
       </ol>
     </section>
 
-    <section data-name="workHistory" v-show="resume.workHistory">
+    <section data-name="workHistory">
       <h2>工作经历</h2>
       <ol>
         <li v-for="item in resume.workHistory">
           <h3>{{item.company}}</h3>
-          <p v-show="item.content"> {{item.content}} </p>
+          <p> {{item.content}} </p>
         </li>
       </ol>
     </section>
