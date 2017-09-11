@@ -2,11 +2,11 @@
   <div id="Preview">
     <section data-name="profile" v-show="resume.profile">
       <h1>
-        {{resume.profile.姓名}}
+        {{resume.profile.name}}
       </h1>
-      <h3>{{resume.profile.职业}}</h3>
+      <h3>{{resume.profile.title}}</h3>
       <p>
-        <span>{{resume.profile.城市}}</span>
+        <span>{{resume.profile.city}}</span>
         <small>{{resume.profile.birthday}}</small>
       </p>
     </section>
