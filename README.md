@@ -1,8 +1,8 @@
 # vue-resumer
 
-> A Vue.js project
+> vue resumer
 
-[https://yongheng2016.github.io/vue-resumer/dist/index.html](https://yongheng2016.github.io/vue-resumer/dist/index.html)
+[view](https://yongheng2016.github.io/vue-resumer/dist/index.html)
 
 ## Build Setup
 
