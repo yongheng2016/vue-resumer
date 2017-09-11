@@ -37,7 +37,7 @@ export default new Vuex.Store({
             ],
             projects: [
                 { name: '在线便利贴', content: `前端：
-    1. javascript组件封装
+    1. javascript组件封装\n
     2. 事件发布订阅模式
     3. webpack, npm script
 后端：
